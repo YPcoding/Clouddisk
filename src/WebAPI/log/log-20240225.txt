@@ -1,0 +1,9 @@
+2024-02-25 00:25:48.329 +08:00 [DBG] TaskSchedulingThreadPool configured with max concurrency of 10 and TaskScheduler ThreadPoolTaskScheduler.
+2024-02-25 00:25:48.350 +08:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-02-25 00:25:48.350 +08:00 [INF] Quartz Scheduler created
+2024-02-25 00:25:48.350 +08:00 [INF] JobFactory set to: Application.Common.Interfaces.SingletonJobFactory
+2024-02-25 00:25:48.351 +08:00 [INF] RAMJobStore initialized.
+2024-02-25 00:25:48.351 +08:00 [INF] Quartz Scheduler 3.8.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-02-25 00:25:48.351 +08:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-02-25 00:25:48.351 +08:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-02-25 00:25:48.356 +08:00 [INF] Adding 0 jobs, 0 triggers.

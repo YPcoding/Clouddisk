@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.2" />
+
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+	  <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0" />
+	  <PackageReference Include="Quartz" Version="3.8.1" />
+	  <PackageReference Include="Serilog.Sinks.MySQL" Version="5.0.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+	  <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.6.0" />
+	  <PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.0.2" />
+	  <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+	  <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+	  <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.3" />
+	  <PackageReference Include="Serilog.Sinks.SQLite" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Common\Helper\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
