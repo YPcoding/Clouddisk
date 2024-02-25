@@ -109,6 +109,9 @@ namespace Migrators.SqLite.Migrations
                     b.Property<long>("Id")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid?>("AliasName")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("TEXT");
 
@@ -127,6 +130,9 @@ namespace Migrators.SqLite.Migrations
                     b.Property<string>("Extension")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool?>("IsFileSaved")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("TEXT");
 
@@ -141,7 +147,6 @@ namespace Migrators.SqLite.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Path")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<long>("SizeByte")

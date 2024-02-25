@@ -70,12 +70,40 @@ public class ApplicationDbContextInitializer
         if (await _context.Users.AnyAsync()) 
             return;
 
+        await InitialiseDocumentsAsync();
         await InitialiseUsersAsync();
         await InitialiseRolesAsync();
         await InitialiseMenusAsync();
         await InitialisePermissionAsync();
         await InitialiseRoleMenusAsync();
     }
+
+    /// <summary>
+    /// 初始化文档
+    /// </summary>
+    /// <returns></returns>
+    public async Task InitialiseDocumentsAsync()
+    {
+        var documents = await _context.Documents.ToListAsync();
+        if (documents.Any()) return;
+
+        var document = new Document();
+        documents = new List<Document>()
+        {
+            new Document()
+            {
+                Id = 1,
+                ParentId = null,
+                Name = "全部",
+                AliasName = Guid.NewGuid(),
+                ConcurrencyStamp=Guid.NewGuid().ToString(),
+            }
+        };
+
+        await _context.Documents.AddRangeAsync(documents);
+        await _context.SaveChangesAsync();
+    }
+
 
     /// <summary>
     /// 初始化用户

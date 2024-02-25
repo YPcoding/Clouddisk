@@ -70,7 +70,7 @@ public class AddNotificationCommandHandler : IRequestHandler<AddNotificationComm
         notification.SenderId = _currentUserService.CurrentUserId;
         notification.AddDomainEvent(new CreatedEvent<Notification>(notification));
         await _context.Notifications.AddAsync(notification);
-        var isSuccess = await _context.SaveChangesAsync(cancellationToken) > 0;
-        return await Result<long>.SuccessOrFailureAsync(notification.Id, isSuccess, new string[] { "操作失败" });
+        var success = await _context.SaveChangesAsync(cancellationToken) > 0;
+        return await Result<long>.SuccessOrFailureAsync(notification.Id, success, new string[] { "操作失败" });
     }
 }
